@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      profile: メンバー紹介
+    attributes:
+      profile:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        name: 名前
+        age: 年齢
+        charge: 役割
+        comment: コメント

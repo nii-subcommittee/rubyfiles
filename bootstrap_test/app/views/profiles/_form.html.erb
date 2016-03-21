@@ -16,34 +16,56 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :name, :class => 'control-label col-lg-2 col-xs-2' %>
+    <div class="col-lg-6 col-xs-6">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
     <%=f.error_span(:name) %>
   </div>
   <div class="form-group">
-    <%= f.label :age, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :age, :class => 'control-label col-lg-2 col-xs-2' %>
+    <div class="col-lg-2 col-xs-2">
       <%= f.text_field :age, :class => 'form-control' %>
     </div>
     <%=f.error_span(:age) %>
   </div>
   <div class="form-group">
-    <%= f.label :charge, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :charge, :class => 'control-label col-lg-2 col-xs-2' %>
+    <div class="col-lg-6 col-xs-6">
       <%= f.text_field :charge, :class => 'form-control' %>
     </div>
     <%=f.error_span(:charge) %>
   </div>
   <div class="form-group">
-    <%= f.label :comment, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <%= f.label :comment, :class => 'control-label col-lg-2  col-xs-2' %>
+    <div class="col-lg-8  col-xs-8">
       <%= f.text_field :comment, :class => 'form-control' %>
     </div>
     <%=f.error_span(:comment) %>
   </div>
-
+  <!-- 追加箇所 開始 -->
+  <div class="form-group">
+    <%= f.label :image, :class => 'control-label col-lg-2  col-xs-2' %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="form-group">
+    <% if @profile.image? %>
+      <div class="thumbnail col-lg-3 col-xs-3">
+        <%= image_tag @profile.image.url %>
+      </div>
+    <% end %><br>
+  </div>
+  <div class="form-group">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @profile.persisted? && @profile.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+  <!-- 追加箇所 終了 -->
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>

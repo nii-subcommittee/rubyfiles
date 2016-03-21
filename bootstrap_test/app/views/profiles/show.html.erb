@@ -12,6 +12,8 @@
   <dd><%= @profile.charge %></dd>
   <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
   <dd><%= @profile.comment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><div class="thumbnail col-lg-5 col-xs-5"><%= image_tag @profile.image.url %></div></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

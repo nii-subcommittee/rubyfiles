@@ -4,20 +4,21 @@
 ja:
   breadcrumbs:
     application:
-      root: "Index"
+      root: "一覧"
     pages:
       pages: "Pages"
   helpers:
-    actions: "Actions"
+    actions: "アクション"
     links:
       back: "戻る"
       cancel: "キャンセル"
-      confirm: "Are you sure?"
+      confirm: "本当に実行してもよろしいですか？"
       destroy: "削除"
-      new: "New"
+      new: "新規"
       edit: "編集"
+      index: "一覧"
     titles:
-      edit: "Edit %{model}"
+      edit: "[編集] %{model}"
       save: "Save %{model}"
-      new: "New %{model}"
-      delete: "Delete %{model}"
+      new: "[新規] %{model}"
+      delete: "[削除] %{model}"
